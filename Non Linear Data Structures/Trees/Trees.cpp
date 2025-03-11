@@ -28,6 +28,16 @@ int main () {
     root->first_child = n2;
     root->second_child = n3;
     root->third_child = n4;
+    root->first_child->first_child = n5;
+
+    // accessing the three elements
+
+    cout<<root->data;
+    cout<<root->first_child->data;
+    cout<<root->second_child->data;
+    cout<<root->third_child->data;
+    cout<<root->first_child->first_child->data;
+
 
     return 0;
 }

@@ -14,7 +14,13 @@ class Node {
     }
 };
 int main () {
-    Node root = NULL;
+    Node* root = new Node(10);
+    root->left = new Node(12);
+    root->right = new Node(21);
+
+    cout<<root->data<<endl;
+    cout<<root->left->data<<"\t";
+    cout<<root->right->data<<endl;
 
 
     
