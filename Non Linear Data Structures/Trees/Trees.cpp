@@ -14,14 +14,20 @@ class Node {
         this->first_child = NULL;
         this->second_child = NULL;
         this->third_child = NULL;
-        this->forth_child = NULL;
     }
 };
 int main () {
 
-    Node* root = NULL;
-    root->data = 10;
-    cout<<root->data;
+    Node* root = new Node(10);
+    Node* n1 = new Node(20);
+    Node* n2 = new Node(13);
+    Node* n3 = new Node(14);
+    Node* n4 = new Node(20);
+    Node* n5 = new Node(60);
+
+    root->first_child = n2;
+    root->second_child = n3;
+    root->third_child = n4;
 
     return 0;
 }
