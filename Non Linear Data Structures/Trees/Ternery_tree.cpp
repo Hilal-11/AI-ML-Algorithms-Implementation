@@ -34,6 +34,15 @@ int main() {
     root->right->right = new Node(77);
 
     cout<<root->data<<endl;
+    cout<<root->left->data<<endl;
+    cout<<root->mid->data<<endl;
+    cout<<root->right->data<<endl;
+
+    cout<<root->left->left->data<<endl;
+    cout<<root->mid->mid->data<<endl;
+    cout<<root->right->right->data<<endl;
+
+
 
     return 0;
 }
