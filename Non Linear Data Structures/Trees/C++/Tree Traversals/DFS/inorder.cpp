@@ -43,7 +43,6 @@ void inOrderTraversal(Node* root) {
     }
 }
 
-
 int main () {
 
     Node* root = new Node(10);
