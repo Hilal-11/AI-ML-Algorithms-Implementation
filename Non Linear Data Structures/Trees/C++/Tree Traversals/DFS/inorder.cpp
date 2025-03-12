@@ -15,13 +15,36 @@ class Node {
     }
 };
 
+// void inOrderTraversal(Node* root) {
+//     if(root == NULL) return;
+
+//     inOrderTraversal(root->left);
+//     cout<<root->data<<"\t";
+//     inOrderTraversal(root->right);
+
+// }
+
 void inOrderTraversal(Node* root) {
     if(root == NULL) return;
 
-    inOrderTraversal(root->left);
-    cout<<root->data<<"\t";
-    inOrderTraversal(root->right);
+    stack<Node*> st;
+    Node* current = root;
 
+    while(current != NULL || !st.empty()) {
+        while(current != NULL){
+            st.push(current);
+            current = current->left;
+        }
+        current = st.top();
+        st.pop();
+        cout<<current->data<<"\t";
+
+        // if(current->right != NULL){
+        //     st.push(current);
+        //     current = current->right;
+        // }
+        current = current->right;
+    }
 }
 
 
