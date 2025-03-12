@@ -39,10 +39,6 @@ void inOrderTraversal(Node* root) {
         st.pop();
         cout<<current->data<<"\t";
 
-        // if(current->right != NULL){
-        //     st.push(current);
-        //     current = current->right;
-        // }
         current = current->right;
     }
 }
