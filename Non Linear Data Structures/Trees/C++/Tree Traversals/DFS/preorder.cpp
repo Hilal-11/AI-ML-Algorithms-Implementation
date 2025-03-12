@@ -1,4 +1,5 @@
 #include<iostream>
+#include<stack>
 using namespace std;
 
 class Node {
@@ -14,13 +15,32 @@ class Node {
     }
 };
 
+//   Recursive approach pre-order traversel
+// void preOrderTraversal(Node* root) {
+//     if (root == NULL) return;
 
-void Pre_Order_Traversal(Node* root) {
-    if (root == NULL) return;
+//     cout<<root->data<<"\t";
+//     preOrderTraversal(root->left);
+//     preOrderTraversal(root->right);
+// }
 
-    cout<<root->data<<"\t";
-    Pre_Order_Traversal(root->left);
-    Pre_Order_Traversal(root->right);
+void preOrderTraversal(Node* root) {
+    if(root == NULL) return;
+    stack<Node*> st;
+    st.push(root);
+
+    while (!st.empty()){
+        Node* node = st.top();
+        st.pop();
+        cout<<node->data<<"\t";
+
+        if(node->right != NULL) {
+            st.push(root->right);
+        }
+        if(node->left != NULL) {
+            st.push(root->left);
+        }
+    }
 }
 
 int main () {
@@ -29,7 +49,7 @@ int main () {
     root->left = new Node(11);
     root->right = new Node(21);
 
-    Pre_Order_Traversal(root);
+    preOrderTraversal(root);
 
 
     return 0;
