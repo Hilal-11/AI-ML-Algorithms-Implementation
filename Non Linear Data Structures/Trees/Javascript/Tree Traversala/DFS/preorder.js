@@ -8,6 +8,7 @@ class Node {
     }
 }
 
+// preorder traversal recursively
 function preOrderTraversal(root) {
     if(root == null) return;
 
@@ -16,18 +17,19 @@ function preOrderTraversal(root) {
     preOrderTraversal(root.right);
 }
 
+// preorder traversal Iteratively
 function preOrderTraversal(root){
 	if(root == null) return;
 	let st = [];
 	st.push(root);
 	
-	while(!st.isEmpty()){
-		let current = st.peek();
+	while(st.length > 0){
+		let current = st[st.length -1];
 		st.pop();
 		console.log(current.data);
 		
-		if(current.right != NULL) st.push(current.right);
-		if(current.left != NULL) st.push(current.left)
+		if(current.right != null) st.push(current.right);
+		if(current.left != null) st.push(current.left)
 	}
 }
 
