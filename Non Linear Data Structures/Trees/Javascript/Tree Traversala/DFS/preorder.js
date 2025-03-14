@@ -16,6 +16,20 @@ function preOrderTraversal(root) {
     preOrderTraversal(root.right);
 }
 
+function preOrderTraversal(root){
+	if(root == null) return;
+	let st = [];
+	st.push(root);
+	
+	while(!st.isEmpty()){
+		let current = st.peek();
+		st.pop();
+		console.log(current.data);
+		
+		if(current.right != NULL) st.push(current.right);
+		if(current.left != NULL) st.push(current.left)
+	}
+}
 
 root = new Node(10);
 root.left = new Node(11);

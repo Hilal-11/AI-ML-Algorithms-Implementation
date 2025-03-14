@@ -45,7 +45,6 @@ void inOrderTraversal(Node* root){
 	     current = current->right;
 	}	
 }
-
 void postOrderTraversal(Node* root){
 	if(root == NULL) return;
 	stack<Node*> st1;
@@ -60,14 +59,12 @@ void postOrderTraversal(Node* root){
 		if(node->left != NULL) st1.push(node->left);
 		if(node->right != NULL) st1.push(node->right);
 	}
-	
 	while(!st2.empty()){
 		Node* curr = st2.top();
 		cout<<curr->data<<"\t";
 		st2.pop();
 	}
 }
-
 
 int main () {
     Node* root = new Node('A');
