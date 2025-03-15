@@ -47,7 +47,10 @@ int main() {
         cout<<random<<endl;
     }
 
-    
+    cout<<"\n\n";
+
+    double value = (rand() % 100) / 10.0;
+    cout<<value<<endl;
 
     return 0;
 }

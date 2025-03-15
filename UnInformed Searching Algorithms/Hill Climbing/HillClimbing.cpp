@@ -25,7 +25,7 @@ double hillClimbing(double start_x, double step_size = 0.1, int max_iterations =
             current_value = new_value;
         } else {
             break;  // Stop if no improvement
-        }
+        }                                                                                         
     }
     return current_x;
 }
