@@ -12,7 +12,7 @@ double objectiveFunction(double x) {
 // Hill Climbing Algorithm
 double hillClimbing(double start_x, double step_size = 0.1, int max_iterations = 100) {
     double current_x = start_x;                   // Starting point
-    double current_value = objectiveFunction(current_x); // Current function value
+    double current_value = objectiveFunction(current_x); // Current fun ction value
 
     for (int i = 0; i < max_iterations; i++) {
         // Generate a neighbor by moving left or right
