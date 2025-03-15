@@ -36,6 +36,8 @@ int main() {
 
     // Start from a random x value between 0 and 6
     double start_x = (rand() % 60) / 10.0; 
+    // double start_x = 5.5; 
+
 
     // Run the Hill Climbing Algorithm
     double best_x = hillClimbing(start_x);
