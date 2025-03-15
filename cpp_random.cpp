@@ -49,7 +49,7 @@ int main() {
 
     cout<<"\n\n";
 
-    double value = (rand() % 100) / 10.0;
+    double value = (rand() % 60) / 10.0;
     cout<<value<<endl;
 
     return 0;
