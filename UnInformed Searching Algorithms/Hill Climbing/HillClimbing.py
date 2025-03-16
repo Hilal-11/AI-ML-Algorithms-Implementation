@@ -33,3 +33,4 @@ best_x = hillClimbing(start_x)
 best_value = objectiveFunction(best_x)
 
 print(f"Best x: {best_x} Best value: {round(best_value , 2)}")
+ 
