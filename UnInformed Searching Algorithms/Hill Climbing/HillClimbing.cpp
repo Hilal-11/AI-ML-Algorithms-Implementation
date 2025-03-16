@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 #include <cstdlib>   // For rand() and srand()
 #include <ctime>     // For seeding random numbers
 
