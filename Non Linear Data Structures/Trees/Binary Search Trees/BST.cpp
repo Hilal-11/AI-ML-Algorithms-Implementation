@@ -15,7 +15,13 @@ class Node{
 };
 
 
-void inOrderTraversal(Node* root) {}
+void inOrderTraversal(Node* root) {
+    if(root == nullptr) return; 
+    
+    inOrderTraversal(root->left);
+    cout << root->data << " ";
+    inOrderTraversal(root->right);
+}
 
 int main() {
 
@@ -31,5 +37,9 @@ int main() {
     root->right->left = new Node(55);
     root->right->right = new Node(70);
 
+
+    inOrderTraversal(root);
+
+    
     return 0;
 }
