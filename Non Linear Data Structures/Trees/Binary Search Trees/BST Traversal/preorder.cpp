@@ -13,8 +13,12 @@ class Node{
     }
 };
 
-void inOrderTraversal(Node* root) {
+void preOrderTraversal(Node* root) {
+    if(root == NULL) return;
 
+    cout<<root->data<<"\t";
+    preOrderTraversal(root->left);
+    preOrderTraversal(root->right);
 }
 
 int main() {
@@ -26,13 +30,13 @@ int main() {
     root->left->left = new Node(30);
     root->left->right = new Node(42);
     root->left->left->left = new Node(10);
-    root->left->left->right = new Node(25);
+    root->left->left->right = new Node(32);
 
     root->right->left = new Node(55);
     root->right->right = new Node(70);
 
 
-
+    preOrderTraversal(root);
 
     return 0;
 }
