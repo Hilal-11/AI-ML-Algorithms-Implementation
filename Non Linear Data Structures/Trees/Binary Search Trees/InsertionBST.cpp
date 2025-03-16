@@ -18,7 +18,6 @@ class Node{
 
 void inOrderTraversal(Node* root) {
     if(root == nullptr) return; 
-    
     inOrderTraversal(root->left);
     cout << root->data << " ";
     inOrderTraversal(root->right);
@@ -45,7 +44,6 @@ Node* insertioBST(Node* root , int val){
 
         }
     }
-
     return root;
 }
 
