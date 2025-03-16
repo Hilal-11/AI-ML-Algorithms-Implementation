@@ -1,7 +1,7 @@
 import random
 
 def objectiveFunction(x):
-    return -((x - 3) * (x - 3) + 9);
+    return -((x - 3) * (x - 3)) + 9
 
 def hillClimbing(start_x , step_size = 0.1, max_iterations = 100):
     current_x = start_x
@@ -27,4 +27,5 @@ def hillClimbing(start_x , step_size = 0.1, max_iterations = 100):
             
         
 
-    
+ran = random.uniform(0 , 6) # random generated between n - m
+print(round(ran , 1))
