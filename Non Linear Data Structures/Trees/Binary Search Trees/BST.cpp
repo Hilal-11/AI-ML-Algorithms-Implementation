@@ -7,10 +7,10 @@ class Node{
     int data;
     Node* left;
     Node* right;
-    Node(int val){
-        data = val;
-        left = NULL;
-        right = NULL;
+    Node(int data){
+        this->data = data;
+        this->left = NULL;
+        this->right = NULL;
     }
 };
 
@@ -21,6 +21,15 @@ void inOrderTraversal(Node* root) {
     inOrderTraversal(root->left);
     cout << root->data << " ";
     inOrderTraversal(root->right);
+}
+
+Node* SearchingBST(Node* root, int val){
+    if(root == NULL) return NULL;
+    if(root->data == val) return root;
+
+    if(root->data > val) return SearchingBST(root->left , val);
+    if(root->data < val) return SearchingBST(root->right , val);
+    return root;
 }
 
 int main() {
@@ -39,7 +48,14 @@ int main() {
 
 
     inOrderTraversal(root);
+    cout<<endl; 
+    // cout<<SearchingBST(root , 50)<<endl;
+    if(SearchingBST(root , 22)){
+        cout<<"True";
+    }else{
+        cout<<"False";
+    }
 
-    
+
     return 0;
 }
