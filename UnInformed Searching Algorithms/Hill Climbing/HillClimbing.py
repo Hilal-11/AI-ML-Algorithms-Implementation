@@ -28,4 +28,8 @@ def hillClimbing(start_x , step_size = 0.1, max_iterations = 100):
         
 
 ran = random.uniform(0 , 6) # random generated between n - m
-print(round(ran , 1))
+start_x = round(ran , 1)
+best_x = hillClimbing(start_x)
+best_value = objectiveFunction(best_x)
+
+print(f"Best x: {best_x} Best value: {round(best_value , 2)}")
