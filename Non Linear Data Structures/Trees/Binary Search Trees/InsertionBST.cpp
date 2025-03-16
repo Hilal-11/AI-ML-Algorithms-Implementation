@@ -45,6 +45,8 @@ Node* insertioBST(Node* root , int val){
 
         }
     }
+
+    return root;
 }
 
 
