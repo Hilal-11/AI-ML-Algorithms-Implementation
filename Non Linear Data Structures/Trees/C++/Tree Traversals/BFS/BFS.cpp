@@ -3,7 +3,7 @@
 #include<vector>
 using namespace std;
 
-class Node {
+class Node {  
     public: 
         int data;
         Node* left;
@@ -15,52 +15,46 @@ class Node {
     }
 };
 
-// vector<vector<int>> level_order_traversal(Node* root) {
-//     if(root == NULL) return {};
+vector<vector<int>> level_order_traversal(Node* root) {
+    if(root == NULL) return {};
 
-//     queue<Node*> q;
-//     int currentLevel = 0;
-//     vector<vector<int>> res;
+    queue<Node*> q;
+    int currentLevel = 0;
+    vector<vector<int>> res;
 
-//     q.push(root);
-
-//     while(!q.empty()) {
-//         int len = q.size();
-//         res.push_back({});
-
-//         for(int i = 0; i < len; i++) {
-//             Node* node = q.front();
-//             q.pop();
-
-//             res[currentLevel].push_back(node->data);
-
-//             if(node->left != NULL) {
-//                 q.push(node->left)
-//             }
-//             if(node->right != NULL){
-//                 q.push(node->right)
-//             }
-//         }
-//         currentLevel++;
-//     }
-//     return res;
-// }
-
-void BFS(Node* root) {
-    if(root == NULL) return;
-
-    queue<Node *> q;
     q.push(root);
-    while (!q.empty()){
-        Node* node = q.front();
-        q.pop();
-        cout<<node->data<<"\t";
 
-        if(node->left != NULL) q.push(node->left);
-        if(node->right != NULL) q.push(node->right);
+    while(!q.empty()) {
+        int len = q.size();
+        res.push_back({});
+
+        for(int i = 0; i < len; i++) {
+            Node* node = q.front();
+            q.pop();
+            res[currentLevel].push_back(node->data);
+            if(node->left != NULL) q.push(node->left);
+            if(node->right != NULL) q.push(node->right);
+        }
+        currentLevel++;
     }
-    
+    return res;
 }
+
+// void BFS(Node* root) {
+//     if(root == NULL) return;
+
+//     queue<Node *> q;
+//     q.push(root);
+//     while (!q.empty()){
+//         Node* node = q.front();
+//         q.pop();
+//         cout<<node->data<<"\t";
+
+//         if(node->left != NULL) q.push(node->left);
+//         if(node->right != NULL) q.push(node->right);
+//     }
+    
+// }
 
 
 int main() {
@@ -72,9 +66,13 @@ root->left->left = new Node(61);
 root->left->right = new Node(31);
 root->right->right = new Node(23);
 
-BFS(root);
+// BFS(root);
+vector<vector<int>> result = level_order_traversal(root);
 
-
+for (vector<int> level : result)
+    for (int data : level)
+        cout << data << "\n";
+  
 
 
 }
