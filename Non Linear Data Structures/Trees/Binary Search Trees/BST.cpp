@@ -23,13 +23,22 @@ void inOrderTraversal(Node* root) {
     inOrderTraversal(root->right);
 }
 
+// Node* SearchingBST(Node* root, int val){
+//     if(root == NULL) return NULL;
+//     if(root->data == val) return root;
+
+//     if(root->data > val) return SearchingBST(root->left , val);
+//     if(root->data < val) return SearchingBST(root->right , val);
+//     return root;
+// }
+
+
 Node* SearchingBST(Node* root, int val){
     if(root == NULL) return NULL;
     if(root->data == val) return root;
 
-    if(root->data > val) return SearchingBST(root->left , val);
-    if(root->data < val) return SearchingBST(root->right , val);
-    return root;
+    else if(root->data > val) return SearchingBST(root->left , val);
+    else return SearchingBST(root->right , val);
 }
 
 int main() {
