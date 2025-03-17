@@ -13,26 +13,19 @@ class Node{
         this->right = NULL;
     }
 };
-vector<int> sortedArrayBST(Node* root) {
+
+int Max_BST(Node* root) {
     if(root == NULL) return;
 
-    vector<int> result;
+    vector<int> elements;
 
-    sortedArrayBST(root->left);
-    result.push_back(root->data);
-    sortedArrayBST(root->right);
+    Max_BST(root->left);
+    elements.push_back(root->data);
+    Max_BST(root->right);
+    
+    return elements[elements.size() -1];
 
-    return result;
 }
-// void sortedArrayBST(Node* root , vector<int>& result) {
-//     if(root == NULL) return;
-
-//     vector<int> result;
-
-//     sortedArrayBST(root->left , result);
-//     result.push_back(root->data);
-//     sortedArrayBST(root->right , result);
-// }
 
 int main() {
 
@@ -48,13 +41,6 @@ int main() {
 
     root->right->left = new Node(55);
     root->right->right = new Node(70);
-
-    vector<int> result;
-    sortedArrayBST(root , result);
-
-    for (int data : result) {
-        cout << data << "\t";
-    }
 
     return 0;
 }
