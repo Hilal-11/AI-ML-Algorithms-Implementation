@@ -1,13 +1,20 @@
 #include<iostream>
 using namespace std;
-
+#define MAX 10
 int main() {
 
-    int n = 5;
-    int m = 6; 
+    int vertices;
+    int edges;
     
-    int adjacencyMatrics[5+1][6+1];
-    for(int i = 0; i < m; i++) {
+    cout<<"Enter the number of vertices:- ";
+    cin>>vertices;
+    
+    int adjacencyMatrics[MAX][MAX] = {0};
+
+    cout<<"Enter the number of edges:- ";
+    cin>>edges;
+
+    for(int i = 0; i < edges; i++) {
         int u , v;
         cin>>u >> v;
 
@@ -15,6 +22,14 @@ int main() {
         adjacencyMatrics[v][u] = 1; // For Undirected Graph
     }
 
+    // Display the adjacency matrics
+    cout<<"Adjacency Matrics Repesentation of Graph \n";
+    for(int i = 0; i < vertices; i++){
+        for(int j = 0; j < vertices; j++){
+            cout<<adjacencyMatrics[i][j]<<" ";
+        }
+        cout<<endl;
+    }
 
 
     return 0;
