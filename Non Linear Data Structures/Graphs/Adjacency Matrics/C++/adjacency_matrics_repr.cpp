@@ -18,13 +18,12 @@ class Graph{
                 adjacencyMatrics[i][j] = 0;
             }
         }
-
     }
     void add_edge(int v , int u){
-        if(isWeighted) {
-            adjacencyMatrics[u][v] = 1;
-            adjacencyMatrics[v][u] = 0;
-        }
+        // if(isWeighted) {
+        //     adjacencyMatrics[u][v] = 1;
+        //     adjacencyMatrics[v][u] = 0;
+        // }
         adjacencyMatrics[u][v] = 1;
         adjacencyMatrics[v][u] = 1;
     }
@@ -41,12 +40,31 @@ class Graph{
 
 int main() {
 
-    Graph G(5);
-    G.add_edge(1 , 3);
-    G.add_edge(1 , 2);
-    G.add_edge(2 , 4);
-    G.add_edge(3 , 5);
-    G.add_edge(4 , 5);
+    // Graph G(5);
+    // G.add_edge(1 , 3);
+    // G.add_edge(1 , 2);
+    // G.add_edge(2 , 4);
+    // G.add_edge(3 , 5);
+    // G.add_edge(4 , 5);
+
+    // G.display_adjacency_matrics();
+
+    int vertices , edges;
+
+    cout<<"Enter number of vertices: -";
+    cin>>vertices;
+
+    Graph G(vertices);
+
+    cout<<"Enter number of edges:- ";
+    cin>>edges;
+
+    for(int i = 0; i < edges; i++){
+        int u , v;
+        cin>>u >> v;
+        
+        G.add_edge(u , v);
+    }
 
     G.display_adjacency_matrics();
 
