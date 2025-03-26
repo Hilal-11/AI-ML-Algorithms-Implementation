@@ -8,10 +8,18 @@ class Graph{
 
         Graph(int v) {
             vertices = v;
+
+
+            // initilize matrics with all zeroes
+            for(int i = 0; i < vertices; i++){
+                for(int j = 0; j < vertices; j++){
+                    adjacencyMatrics[i][j] = {0};
+                }
+            }
+
         }
 
         void add_edge(int u , int v) {
-
             adjacencyMatrics[u][v] = 1;
             adjacencyMatrics[v][u] = 1;
         }
