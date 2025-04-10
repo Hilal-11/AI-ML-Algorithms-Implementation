@@ -5,7 +5,7 @@ using namespace std;
 
 class Graph{
     public: 
-        unordered_map<int list<int>> adjacencyList;
+        unordered_map<int, list<int>> adjacencyList;
 
     void addEdge(int u , int v , bool direction) {
         adjacencyList[u].push_back(v);
