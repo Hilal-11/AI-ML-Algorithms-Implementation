@@ -32,7 +32,6 @@ int main() {
     int edges;
     cout<<"Enter Edges:- ";
     cin>>edges;
-    
     Graph G;
 
     for(int i = 0; i < edges; i++) {
