@@ -2,8 +2,6 @@
 #include<list>
 #include<map>
 using namespace std;
-
-
 class Graph{
     public: 
         map<int , list<int>> adjscencyList;
