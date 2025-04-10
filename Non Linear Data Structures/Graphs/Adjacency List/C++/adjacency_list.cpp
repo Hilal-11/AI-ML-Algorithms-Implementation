@@ -3,11 +3,12 @@
 #include<list>
 using namespace std;
 
+template <class T>
 class Graph{
     public: 
-        unordered_map<int, list<int>> adjacencyList;
+        unordered_map<T, list<T>> adjacencyList;
 
-    void addEdge(int u , int v , bool direction) {
+    void addEdge(T u , T v , bool direction) {
         adjacencyList[u].push_back(v);
 
         if(direction == 0)
@@ -34,9 +35,10 @@ int main() {
     int edges;
     cout<<"Enter number of edges:- "<<endl;
     cin>>edges;
-    Graph G;
+    Graph<string> G;
+    
     for(int i = 0; i < edges; i++){
-        int u , v;
+        string u , v;
         cin>>u>>v;
         G.addEdge(u , v , 0);
     }
