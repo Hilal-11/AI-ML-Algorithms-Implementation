@@ -28,8 +28,10 @@ class Graph{
 int main() {
     int vertices;
     cout<<"Enter Vertices:- ";
+    cin>>vertices;
     int edges;
     cout<<"Enter Edges:- ";
+    cin>>edges;
     
     Graph G;
 
