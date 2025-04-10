@@ -7,14 +7,12 @@ template <class T>
 class Graph{
     public: 
         unordered_map<T, list<T>> adjacencyList;
-
     void addEdge(T u , T v , bool direction) {
         adjacencyList[u].push_back(v);
 
         if(direction == 0)
             adjacencyList[v].push_back(u);
     }
-
     void displayAjacencyList() {
         for(auto i : adjacencyList){
             cout<<i.first<<" ";
@@ -25,7 +23,6 @@ class Graph{
         }
     }
 };
-
 int main() {
 
     int vertices;
