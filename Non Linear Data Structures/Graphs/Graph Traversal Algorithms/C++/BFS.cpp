@@ -25,15 +25,19 @@ class Graph{
     }
     void BFS(T start) {
         map<T , bool> visited; // To track the visited nodes
-        queue<T> q;
+        queue<T> q; // Queue for BFS
 
+        // Start BFS from the given node
         q.push(start);
         visited[start] = true;
 
         while(!q.empty()) {
             T node = q.front();
             q.pop();
-            cout<<node<<"\t";
+            cout<<node<<"\t";   // Process the current node
+
+
+            // Visit all neighbors of the current node
             for(auto neigbour: adjacencyList[node]) {
                 if(!visited[neigbour]){
                     q.push(neigbour);
@@ -45,6 +49,28 @@ class Graph{
     }
 };
 
+template <typename T>
+void breadthFirstSearch(T start , map<T , list<T>> adjacencyList){
+    map<T , bool> visited;
+    queue<T>q;
+
+    q.push(start);
+    visited[start] = true;
+
+    while(!q.empty()) {
+        T node = q.front();
+        q.pop();
+        cout<<node<<"\t";
+
+        for(auto neighbour: adjacencyList[node]){
+            if(!visited[neighbour]){
+                q.push(neighbour);
+                visited[neighbour] = true;
+            }
+        }
+    }
+
+}
 
 
 int main() {
@@ -75,6 +101,12 @@ int main() {
     cout<<endl;
 
     G.BFS(startNode);
+
+    cout<<endl;
+
+    breadthFirstSearch(0, G.adjacencyList);
+
+
 
     return 0;
 }
