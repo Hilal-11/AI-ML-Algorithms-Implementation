@@ -23,8 +23,27 @@ class Graph{
             cout<<endl;
         }
     }
-    void BFS() {
-    
+    void BFS(T start) {
+        map<T , bool> visited; // To track the visited nodes
+        queue<T> q;
+
+        q.push(start);
+        visited[start] = true;
+
+        while(!q.empty()) {
+            T node = q.front();
+            q.pop();
+
+            cout<<node<<"\t";
+
+            for(auto neigbour: adjacencyList[node]) {
+                if(!visited[neigbour]){
+                    q.push(neigbour);
+                    visited[neigbour] = true;
+                }
+            }
+        }
+        cout<<endl;
     }
 };
 
@@ -47,7 +66,17 @@ int main() {
 
         G.addEdge(u , v , 0);
     }
+    cout<<endl;
     G.displayGraph();
+    cout<<endl;
+
+    int startNode;
+    cout<<"Enter the starting node for BFS:- ";
+    cin>>startNode;
+
+    cout<<endl;
+
+    G.BFS(startNode);
 
     return 0;
 }
