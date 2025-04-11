@@ -33,9 +33,7 @@ class Graph{
         while(!q.empty()) {
             T node = q.front();
             q.pop();
-
             cout<<node<<"\t";
-
             for(auto neigbour: adjacencyList[node]) {
                 if(!visited[neigbour]){
                     q.push(neigbour);
