@@ -49,6 +49,7 @@
         "xtr1common": "cpp",
         "array": "cpp",
         "list": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "map": "cpp"
     }
 }

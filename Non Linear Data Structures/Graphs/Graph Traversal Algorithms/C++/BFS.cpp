@@ -2,6 +2,7 @@
 #include<map>
 #include<list>
 #include<queue>
+#include<vector>
 using namespace std;
 
 template <class T>
@@ -22,7 +23,13 @@ class Graph{
             cout<<endl;
         }
     }
+    void BFS() {
+    
+    }
 };
+
+
+
 int main() {
 
     int vertices;
