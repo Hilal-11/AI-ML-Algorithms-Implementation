@@ -37,16 +37,15 @@ void DFS(int node , map<int , list<int>> adjList , map<int , bool> visited , lis
     for(auto neighbours: adjList[node]) {
         if(!visited[neighbours]){
             DFS(neighbours ,adjList , visited , ls);
+            visited[neighbours] = true;
         }   
     }
-
 }
 
 void DFS_Traversal(int start , map<int, list<int>>adjacencyList) {
     map<int , bool> visited;
     list<int> ls;
     DFS(start , adjacencyList , visited , ls);
- 
 }
 
 
