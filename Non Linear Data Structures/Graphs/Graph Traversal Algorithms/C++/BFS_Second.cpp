@@ -23,6 +23,30 @@ class Graph{
     }
 };
 
+
+void BFS_Traversal(int start , map<int , list<int>> adjacencyList) {
+    map<int , bool> visited;
+    queue<int> q;
+    
+    q.push(start);
+    visited[start] = true;
+
+    while(!q.empty()){
+        int node = q.front();
+        q.pop();
+
+        cout<<node<<"\t";
+
+        for(int neighbours: adjacencyList[node]){
+            if(!visited[neighbours]){
+                q.push(neighbours);
+                visited[neighbours] = true;
+            }
+        }
+    }   
+
+}   
+
 int main() {
 
 
