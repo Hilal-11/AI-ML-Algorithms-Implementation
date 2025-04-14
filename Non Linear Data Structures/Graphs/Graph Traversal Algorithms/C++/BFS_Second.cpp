@@ -43,7 +43,7 @@ void BFS_Traversal(int start , map<int , list<int>> adjacencyList) {
                 visited[neighbours] = true;
             }
         }
-    }   
+    }    
 
 }   
 
