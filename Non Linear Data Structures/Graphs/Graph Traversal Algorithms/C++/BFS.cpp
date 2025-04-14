@@ -23,7 +23,7 @@ class Graph{
             cout<<endl;
         }
     }
-    void BFS(T start) {
+    void BFS(T start) {                                 
         map<T , bool> visited; // To track the visited nodes
         queue<T> q; // Queue for BFS
 
