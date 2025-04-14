@@ -29,19 +29,24 @@ class Graph{
     }
 };
 
-void DFS_Traversal(int start , map<int, list<int>>adjacencyList) {
-    map<int , bool> visited;
-    list<int> ls;
+void DFS(int node , map<int , list<int>> adjList , map<int , bool> visited , list<int>&ls) {
 
-    ls.push_back(start);
-    visited[start] = true;
-    cout<<start<<"\t";
-    for(auto neighbours: adjacencyList[start]) {
+    visited[node] = true;
+    ls.push_back(node);
+    cout<<node<<"\t";
+    for(auto neighbours: adjList[node]) {
         if(!visited[neighbours]){
-            DFS_Traversal(neighbours , adjacencyList);
+            DFS(neighbours ,adjList , visited , ls);
         }   
     }
 
+}
+
+void DFS_Traversal(int start , map<int, list<int>>adjacencyList) {
+    map<int , bool> visited;
+    list<int> ls;
+    DFS(start , adjacencyList , visited , ls);
+ 
 }
 
 
