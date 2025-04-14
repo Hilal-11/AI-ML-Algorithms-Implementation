@@ -70,7 +70,7 @@ int main() {
     G.displayGraph();
     cout<<endl;
 
-    DFS_Traversal(0 , G.adjacencyList);
+    DFS_Traversal(1 , G.adjacencyList);
 
     return 0;
 }
