@@ -69,5 +69,10 @@ int main() {
     G.displayGraph();
     cout<<endl;
 
+
+
+    BFS_Traversal(0 , G.adjacencyList);
+
+
     return 0;
 }
